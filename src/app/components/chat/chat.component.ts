@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ChatServiceService } from 'src/app/services/chat-service.service';
+import { ChatService } from 'src/app/services/chat.service';
 
 @Component({
   selector: 'app-chat',
@@ -16,7 +16,7 @@ export class ChatComponent implements OnInit, OnDestroy {
 
   mensajes: any[] = [];
 
-  constructor(private chatService: ChatServiceService) { }
+  constructor(private chatService: ChatService) { }
 
   ngOnDestroy(): void {
     this.mensajesSubscription.unsubscribe();
